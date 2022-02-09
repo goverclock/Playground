@@ -1,2 +1,5 @@
 # Rhino
- A Qt beginner demo.
+
+![title_pic](https://github.com/GozSoft/Rhino/blob/main/title_pic.png)
+
+ A Qt beginner's game demo.
