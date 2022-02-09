@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "chrono": "cpp",
+        "limits": "cpp",
+        "qmediaplayer": "cpp",
+        "qgraphicsrectitem": "cpp",
+        "qgraphicsview": "cpp",
+        "qgraphicsscene": "cpp"
+    }
+}

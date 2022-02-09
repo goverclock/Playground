@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/">
+        <file>sound/vgrsata.wav</file>
+        <file>sound/vgrsatb.wav</file>
+        <file>sound/vgrsatc.wav</file>
+        <file>sound/vgrsatd.wav</file>
+        <file>sound/vgrsmoa.wav</file>
+        <file>sound/vgrsmob.wav</file>
+        <file>sound/vgrsmoc.wav</file>
+        <file>sound/vgrssea.wav</file>
+        <file>sound/vgrsseb.wav</file>
+        <file>sound/vgrssec.wav</file>
+        <file>sound/csof062.wav</file>
+        <file>sound/csof064.wav</file>
+    </qresource>
+</RCC>

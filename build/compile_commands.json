@@ -1,0 +1,52 @@
+[
+{
+  "directory": "D:/OneDrive - bupt.edu.cn/Rhino/Rhino/build",
+  "command": "D:\\SoftWare\\mingw64\\bin\\x86_64-w64-mingw32-g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIA_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB @CMakeFiles/Rhino.dir/includes_CXX.rsp -g -std=gnu++11 -o CMakeFiles\\Rhino.dir\\Rhino_autogen\\mocs_compilation.cpp.obj -c \"D:\\OneDrive - bupt.edu.cn\\Rhino\\Rhino\\build\\Rhino_autogen\\mocs_compilation.cpp\"",
+  "file": "D:/OneDrive - bupt.edu.cn/Rhino/Rhino/build/Rhino_autogen/mocs_compilation.cpp"
+},
+{
+  "directory": "D:/OneDrive - bupt.edu.cn/Rhino/Rhino/build",
+  "command": "D:\\SoftWare\\mingw64\\bin\\x86_64-w64-mingw32-g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIA_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB @CMakeFiles/Rhino.dir/includes_CXX.rsp -g -std=gnu++11 -o CMakeFiles\\Rhino.dir\\main.cpp.obj -c \"D:\\OneDrive - bupt.edu.cn\\Rhino\\Rhino\\main.cpp\"",
+  "file": "D:/OneDrive - bupt.edu.cn/Rhino/Rhino/main.cpp"
+},
+{
+  "directory": "D:/OneDrive - bupt.edu.cn/Rhino/Rhino/build",
+  "command": "D:\\SoftWare\\mingw64\\bin\\x86_64-w64-mingw32-g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIA_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB @CMakeFiles/Rhino.dir/includes_CXX.rsp -g -std=gnu++11 -o CMakeFiles\\Rhino.dir\\game.cpp.obj -c \"D:\\OneDrive - bupt.edu.cn\\Rhino\\Rhino\\game.cpp\"",
+  "file": "D:/OneDrive - bupt.edu.cn/Rhino/Rhino/game.cpp"
+},
+{
+  "directory": "D:/OneDrive - bupt.edu.cn/Rhino/Rhino/build",
+  "command": "D:\\SoftWare\\mingw64\\bin\\x86_64-w64-mingw32-g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIA_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB @CMakeFiles/Rhino.dir/includes_CXX.rsp -g -std=gnu++11 -o CMakeFiles\\Rhino.dir\\tank.cpp.obj -c \"D:\\OneDrive - bupt.edu.cn\\Rhino\\Rhino\\tank.cpp\"",
+  "file": "D:/OneDrive - bupt.edu.cn/Rhino/Rhino/tank.cpp"
+},
+{
+  "directory": "D:/OneDrive - bupt.edu.cn/Rhino/Rhino/build",
+  "command": "D:\\SoftWare\\mingw64\\bin\\x86_64-w64-mingw32-g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIA_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB @CMakeFiles/Rhino.dir/includes_CXX.rsp -g -std=gnu++11 -o CMakeFiles\\Rhino.dir\\base.cpp.obj -c \"D:\\OneDrive - bupt.edu.cn\\Rhino\\Rhino\\base.cpp\"",
+  "file": "D:/OneDrive - bupt.edu.cn/Rhino/Rhino/base.cpp"
+},
+{
+  "directory": "D:/OneDrive - bupt.edu.cn/Rhino/Rhino/build",
+  "command": "D:\\SoftWare\\mingw64\\bin\\x86_64-w64-mingw32-g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIA_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB @CMakeFiles/Rhino.dir/includes_CXX.rsp -g -std=gnu++11 -o CMakeFiles\\Rhino.dir\\health.cpp.obj -c \"D:\\OneDrive - bupt.edu.cn\\Rhino\\Rhino\\health.cpp\"",
+  "file": "D:/OneDrive - bupt.edu.cn/Rhino/Rhino/health.cpp"
+},
+{
+  "directory": "D:/OneDrive - bupt.edu.cn/Rhino/Rhino/build",
+  "command": "D:\\SoftWare\\mingw64\\bin\\x86_64-w64-mingw32-g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIA_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB @CMakeFiles/Rhino.dir/includes_CXX.rsp -g -std=gnu++11 -o CMakeFiles\\Rhino.dir\\tank_snd.cpp.obj -c \"D:\\OneDrive - bupt.edu.cn\\Rhino\\Rhino\\tank_snd.cpp\"",
+  "file": "D:/OneDrive - bupt.edu.cn/Rhino/Rhino/tank_snd.cpp"
+},
+{
+  "directory": "D:/OneDrive - bupt.edu.cn/Rhino/Rhino/build",
+  "command": "D:\\SoftWare\\mingw64\\bin\\x86_64-w64-mingw32-g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIA_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB @CMakeFiles/Rhino.dir/includes_CXX.rsp -g -std=gnu++11 -o CMakeFiles\\Rhino.dir\\gun.cpp.obj -c \"D:\\OneDrive - bupt.edu.cn\\Rhino\\Rhino\\gun.cpp\"",
+  "file": "D:/OneDrive - bupt.edu.cn/Rhino/Rhino/gun.cpp"
+},
+{
+  "directory": "D:/OneDrive - bupt.edu.cn/Rhino/Rhino/build",
+  "command": "D:\\SoftWare\\mingw64\\bin\\x86_64-w64-mingw32-g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIA_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB @CMakeFiles/Rhino.dir/includes_CXX.rsp -g -std=gnu++11 -o CMakeFiles\\Rhino.dir\\bullet.cpp.obj -c \"D:\\OneDrive - bupt.edu.cn\\Rhino\\Rhino\\bullet.cpp\"",
+  "file": "D:/OneDrive - bupt.edu.cn/Rhino/Rhino/bullet.cpp"
+},
+{
+  "directory": "D:/OneDrive - bupt.edu.cn/Rhino/Rhino/build",
+  "command": "D:\\SoftWare\\mingw64\\bin\\x86_64-w64-mingw32-g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIA_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB @CMakeFiles/Rhino.dir/includes_CXX.rsp -g -std=gnu++11 -o CMakeFiles\\Rhino.dir\\Rhino_autogen\\EWIEGA46WW\\qrc_res.cpp.obj -c \"D:\\OneDrive - bupt.edu.cn\\Rhino\\Rhino\\build\\Rhino_autogen\\EWIEGA46WW\\qrc_res.cpp\"",
+  "file": "D:/OneDrive - bupt.edu.cn/Rhino/Rhino/build/Rhino_autogen/EWIEGA46WW/qrc_res.cpp"
+}
+]
