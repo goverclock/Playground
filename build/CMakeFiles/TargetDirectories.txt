@@ -1,4 +1,0 @@
-D:/OneDrive - bupt.edu.cn/Rhino/Rhino/build/CMakeFiles/Rhino.dir
-D:/OneDrive - bupt.edu.cn/Rhino/Rhino/build/CMakeFiles/edit_cache.dir
-D:/OneDrive - bupt.edu.cn/Rhino/Rhino/build/CMakeFiles/rebuild_cache.dir
-D:/OneDrive - bupt.edu.cn/Rhino/Rhino/build/CMakeFiles/Rhino_autogen.dir

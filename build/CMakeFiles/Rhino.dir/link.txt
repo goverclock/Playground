@@ -1,3 +1,0 @@
-D:\SoftWare\CMake\bin\cmake.exe -E rm -f CMakeFiles\Rhino.dir/objects.a
-D:\SoftWare\mingw64\bin\ar.exe qc CMakeFiles\Rhino.dir/objects.a @CMakeFiles\Rhino.dir\objects1.rsp
-D:\SoftWare\mingw64\bin\x86_64-w64-mingw32-g++.exe -g -Wl,--whole-archive CMakeFiles\Rhino.dir/objects.a -Wl,--no-whole-archive -o Rhino.exe -Wl,--out-implib,libRhino.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Rhino.dir\linklibs.rsp
