@@ -1,0 +1,3 @@
+/home/Gaomez/Desktop/codes/Playground/GChat/build/CMakeFiles/GChat.dir
+/home/Gaomez/Desktop/codes/Playground/GChat/build/CMakeFiles/edit_cache.dir
+/home/Gaomez/Desktop/codes/Playground/GChat/build/CMakeFiles/rebuild_cache.dir
