@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/GChat.dir/server.cpp.o -o GChat 
