@@ -49,7 +49,15 @@ int main(int argc, char* argv[]) {
         send_buf[len] = '\0';
         send(sockfd, send_buf, len, 0);
 
-        // puts("Here");
+        if (fds[1].revents & POLLRDHUP) {
+            printf("server closed the connection.\n");
+            break;
+        } else if (fds[1].revents & POLLIN) {
+            // receving data
+            memset(read_buf, 0, BUFFER_SIZE);
+            recv(fds[1].fd, read_buf, BUFFER_SIZE - 1, 0);
+            printf("rec: %s",  read_buf);
+        }
 
         memset(read_buf, 0, BUFFER_SIZE);
         recv(sockfd, read_buf, 10, 0);
