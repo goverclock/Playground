@@ -35,18 +35,13 @@ int main(int argc, char* argv[]) {
     while (1) {
         printf("Enter message:\n");
         scanf("%s", send_buf);
+        if(send_buf[0] == '#') break;
         int len = strlen(send_buf);
         send_buf[len] = ' ';
         len++;
         send_buf[len] = '\0';
         send(sockfd, send_buf, len, 0);
         puts("DONE");
-
-        // puts("Here");
-
-        // memset(read_buf, 0, BUFFER_SIZE);
-        // recv(sockfd, read_buf, 10, 0);
-        // printf("Rec: \"%s\"\n", read_buf);
     }
 
     closesocket(sockfd);
