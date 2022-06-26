@@ -1,7 +1,7 @@
 #include "view.h"
 
 View::View(){
-    setFixedSize(1000, 1000);
+    setFixedSize(WINDOW_W, WINDOW_H);
 
     show();
 }

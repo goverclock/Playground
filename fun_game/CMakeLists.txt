@@ -20,6 +20,8 @@ set(PROJECT_SOURCES
         client/view.h
         client/net.cpp
         client/net.h
+
+        client/config.h
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
