@@ -1,4 +1,5 @@
 #include <QApplication>
+#include <QtNetwork>
 #include "view.h"
 #include "net.h"
 
