@@ -1,4 +1,6 @@
 #pragma once
 
-#define WINDOW_W 1000
-#define WINDOW_H 600
+#include <QDebug>
+
+#define WINDOW_W 800
+#define WINDOW_H 480

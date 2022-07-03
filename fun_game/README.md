@@ -1,1 +1,2 @@
-一个网络游戏.
+An online game.
+Just for fun.

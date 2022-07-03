@@ -1,6 +1,6 @@
 #pragma once
 #include <QGraphicsView>
-#include "config.h"
+#include "client/config.h"
 
 class View : public QGraphicsView{
     public:
