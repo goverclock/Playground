@@ -17,12 +17,17 @@ find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Network REQUIRED)
 
 set(PROJECT_SOURCES
         client/main.cpp
-        client/gui/view.cpp
-        client/gui/view.h
         client/net.cpp
         client/net.h
-
         client/config.h
+        client/protocol.h
+
+        client/chat/chat.cpp
+        client/chat/chat.h
+
+        client/gui/view.cpp
+        client/gui/view.h
+
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

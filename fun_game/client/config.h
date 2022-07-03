@@ -1,5 +1,5 @@
 #pragma once
-
+#include <QObject>
 #include <QDebug>
 
 #define WINDOW_W 800
