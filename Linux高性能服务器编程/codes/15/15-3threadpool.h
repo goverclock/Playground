@@ -24,7 +24,7 @@ private:
     int m_thread_number;            // 线程池中线程的数量
     int m_max_requests;             // 工作队列中最多允许的请求数量
     pthread_t* m_threads;           // 线程
-    std::list< T* > m_workqueue;    // 工作队列
+    std::list< T* > m_workqueue;    // 工作队列,链表实现
     locker m_queuelocker;           // 对工作队列加的互斥锁
     sem m_queuestat;                // 是否有任务需要处理
     bool m_stop;                    // 是否结束线程
@@ -45,7 +45,7 @@ threadpool< T >::threadpool( int thread_number, int max_requests ) :
         throw std::exception();
     }
 
-    for ( int i = 0; i < thread_number; ++i )
+    for ( int i = 0; i < thread_number; ++i )   // 创建所有线程,并且detach他们
     {
         printf( "create the %dth thread\n", i );
         if( pthread_create( m_threads + i, NULL, worker, this ) != 0 )
@@ -69,9 +69,9 @@ threadpool< T >::~threadpool()
 }
 
 template< typename T >
-bool threadpool< T >::append( T* request )
+bool threadpool< T >::append( T* request )      // 添加新请求到工作队列
 {
-    m_queuelocker.lock();
+    m_queuelocker.lock();                       // 工作队列需要加锁操作
     if ( m_workqueue.size() > m_max_requests )
     {
         m_queuelocker.unlock();
@@ -84,7 +84,7 @@ bool threadpool< T >::append( T* request )
 }
 
 template< typename T >
-void* threadpool< T >::worker( void* arg )
+void* threadpool< T >::worker( void* arg )      // 创建线程时,这个参数被传递为线程池实例
 {
     threadpool* pool = ( threadpool* )arg;
     pool->run();
@@ -92,25 +92,25 @@ void* threadpool< T >::worker( void* arg )
 }
 
 template< typename T >
-void threadpool< T >::run()
+void threadpool< T >::run()                     // 一个线程将要运行的代码
 {
     while ( ! m_stop )
     {
-        m_queuestat.wait();
-        m_queuelocker.lock();
+        m_queuestat.wait();                     // 等待锁
+        m_queuelocker.lock();                   // 得到锁
         if ( m_workqueue.empty() )
         {
             m_queuelocker.unlock();
             continue;
         }
-        T* request = m_workqueue.front();
+        T* request = m_workqueue.front();       // 从工作队列中获取任务
         m_workqueue.pop_front();
         m_queuelocker.unlock();
         if ( ! request )
         {
             continue;
         }
-        request->process();
+        request->process();                     // 处理这个任务
     }
 }
 
