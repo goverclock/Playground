@@ -5,8 +5,8 @@
 
 #include <unistd.h>
 
-// using namespace muduo;
-// using namespace muduo::net;
+using namespace muduo;
+using namespace muduo::net;
 
 int main()
 {
