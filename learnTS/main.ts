@@ -1,4 +1,8 @@
-let isDone: boolean = false;
+interface StringArray {
+    [index: number]: string;
+}
 
-let nam: string = "gaomez";
-nam = "Jeff";
+let arr: StringArray;
+arr = ["Alice", "Bob"];
+
+alert(arr[0]);

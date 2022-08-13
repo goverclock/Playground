@@ -1,3 +1,3 @@
-let isDone = false;
-let nam = "gaomez";
-nam = "Jeff";
+let arr;
+arr = ["Alice", "Bob"];
+alert(arr[0]);
