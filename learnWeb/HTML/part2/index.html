@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <figure>
+        <img src="https://raw.githubusercontent.com/mdn/learning-area/master/html/multimedia-and-embedding/images-in-html/dinosaur_small.jpg"
+            alt="A dinosar with sharp teeth" width="200" height="171" title="Dinosor.png">
+        <figcaption>恐龙</figcaption>
+    </figure>
+
+    <!-- <video src="src/rabbit320.webm" controls>
+        <p>some text: <a href="src/rabbit320.webm">link</a> to watch</p>
+    </video> -->
+    <video controls width="400" height="400" loop muted poster="src/poster.png">
+        <source src="src/rabbit320.mp4" type="video/mp4">
+        <source src="src/rabbit320.webm" type="video/webm">
+        <p>你的浏览器不支持 HTML5 视频。可点击<a href="rabbit320.mp4">此链接</a>观看</p>
+    </video>
+
+    <audio controls>
+        <source src="src/viper.mp3" type="audio/mp3">
+        <source src="src/viper.ogg" type="audio/ogg">
+        <p>你的浏览器不支持 HTML5 音频，可点击<a href="src/viper.mp3">此链接</a>收听。</p>
+    </audio>
+
+</body>
+
+</html>
