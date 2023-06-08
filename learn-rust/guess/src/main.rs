@@ -6,7 +6,7 @@ use std::io;
 
 fn main() {
     let stdout = stdout();
-    let out = b"Guess the fucking number!(sorry)";
+    let out = "Guess the fucking number!(sorry)";
     let wid = 24;
     let mut writer = BufWriter::new(stdout.lock());
     say(out, wid, &mut writer).unwrap();    // won't work
