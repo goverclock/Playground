@@ -1,0 +1,7 @@
+mov al, 0x09
+out 0x70, al
+in ax, 0x71
+
+
+times 510-($-$$) db 0
+                  db 0x55,0xaa
