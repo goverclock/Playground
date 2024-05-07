@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello Vue</title>
+  <link rel="stylesheet" href="https://unpkg.com/element-plus/dist/index.css" />
+
+</head>
+
+<body>
+  <div id="app">
+    <h1>{{title}}</h1>
+    <el-button type="primary" @click="handleClick">点我</el-button>
+    <p>计数{{count}}</p>
+    <router-view></router-view>
+  </div>
+  <script src="https://unpkg.com/vue@3.2.24/dist/vue.global.js"></script>
+  <script src="https://unpkg.com/element-plus"></script>
+
+  <script type="text/javascript">
+    const App = {
+      data() {
+        return {
+          title: 'Hello Vue',
+          count: 0
+        }
+      },
+      methods:{
+        handleClick() {
+          this.count++;
+        }
+      }
+    }
+
+    Vue.createApp(App).use(ElementPlus).mount('#app')
+  </script>
+</body>
+</html>

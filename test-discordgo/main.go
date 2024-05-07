@@ -12,7 +12,7 @@ import (
 
 // Variables used for command line parameters
 var (
-	Token string = "MTExNDc0OTY0NjI1NDkwMzQ0Ng.GTYi8Q.1xTYb7UiIUQT0wzLhWpGO9sSfULt95VJAhJ5mk"
+	Token string = "CENSORED"
 )
 
 func main() {

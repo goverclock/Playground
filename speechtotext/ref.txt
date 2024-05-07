@@ -1,0 +1,5 @@
+https://www.thepythoncode.com/article/using-speech-recognition-to-convert-speech-to-text-python
+
+https://pypi.org/project/SpeechRecognition/
+
+https://zhuanlan.zhihu.com/p/361930998
