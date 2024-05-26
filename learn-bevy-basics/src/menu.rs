@@ -1,4 +1,4 @@
-use bevy::prelude::*;
+use bevy::{app::AppExit, prelude::*};
 
 use crate::GameState;
 
@@ -10,11 +10,10 @@ enum MenuState {
     Disabled, // not in menu, e.g. InGame state
 }
 
+// color constants
 const TEXT_COLOR: Color = Color::rgb(0.0, 0.0, 0.0);
-const DIEP_BLUE: Color = Color::rgb(0.0, 0.69, 0.87);
-const NORMAL_BUTTON: Color = Color::rgb(0.15, 0.15, 0.15);
-const HOVERED_BUTTON: Color = Color::rgb(0.25, 0.25, 0.25);
-const HOVERED_PRESSED_BUTTON: Color = Color::rgb(0.25, 0.65, 0.25);
+const NORMAL_BUTTON: Color = Color::GRAY;
+const HOVERED_BUTTON: Color = Color::DARK_GRAY;
 const PRESSED_BUTTON: Color = Color::rgb(0.35, 0.75, 0.35);
 
 // tag entities added on the Main menu screen
@@ -23,7 +22,7 @@ struct OnMenuMainScreen;
 
 // tag entities added on the Settings menu screen
 #[derive(Component)]
-struct OnMenuSettings;
+struct OnMenuSettingsScreen;
 
 #[derive(Component)]
 struct SelectedOption;
@@ -40,6 +39,12 @@ pub fn menu_plugin(app: &mut App) {
     app.init_state::<MenuState>()
         .add_systems(OnEnter(GameState::Menu), menu_setup)
         .add_systems(OnEnter(MenuState::Main), main_menu_setup)
+        .add_systems(OnExit(MenuState::Main), despawn_screen::<OnMenuMainScreen>)
+        .add_systems(OnEnter(MenuState::Settings), settings_menu_setup)
+        .add_systems(
+            OnExit(MenuState::Settings),
+            despawn_screen::<OnMenuSettingsScreen>,
+        )
         .add_systems(
             Update,
             (menu_action, button_colors).run_if(in_state(GameState::Menu)),
@@ -51,6 +56,9 @@ fn menu_action(
         (&Interaction, &MenuButtonAction),
         (Changed<Interaction>, With<Button>),
     >,
+    mut app_exit_events: EventWriter<AppExit>,
+    mut game_state: ResMut<NextState<GameState>>,
+    mut menu_state: ResMut<NextState<MenuState>>,
 ) {
     for (interaction, menu_button_action) in &interaction_query {
         if *interaction != Interaction::Pressed {
@@ -58,9 +66,22 @@ fn menu_action(
         }
         match menu_button_action {
             MenuButtonAction::Play => {
-                info!("You pressed Play button!")
+                info!("You pressed Play button!");
+                game_state.set(GameState::InGame);
+                menu_state.set(MenuState::Disabled);
             }
-            _ => {}
+            MenuButtonAction::Settings => {
+                info!("You pressed Settings button!");
+                menu_state.set(MenuState::Settings);
+            }
+            MenuButtonAction::Quit => {
+                info!("You pressed Quit button!");
+                app_exit_events.send(AppExit);
+            }
+            MenuButtonAction::BackToMainMenu => {
+                info!("You pressed Back button!");
+                menu_state.set(MenuState::Main);
+            }
         }
     }
 }
@@ -80,6 +101,13 @@ fn button_colors(
     }
 }
 
+fn despawn_screen<T: Component>(to_despawn: Query<Entity, With<T>>, mut cmds: Commands) {
+    info!("despaw_screen: called");
+    for e in &to_despawn {
+        cmds.entity(e).despawn_recursive();
+    }
+}
+
 fn menu_setup(mut menu_state: ResMut<NextState<MenuState>>) {
     info!("menu_setup: begin");
     menu_state.set(MenuState::Main); // This will queue up state transitions to be performed during the next frame update cycle.
@@ -95,14 +123,6 @@ fn main_menu_setup(mut cmds: Commands) {
         align_items: AlignItems::Center,
         ..default()
     };
-    // let button_icon_style = Style {
-    //     width: Val::Px(30.0),
-    //     // This takes the icons out of the flexbox flow, to be positioned exactly
-    //     position_type: PositionType::Absolute,
-    //     // The icon will be close to the left border of the button
-    //     left: Val::Px(10.0),
-    //     ..default()
-    // };
     let button_text_style = TextStyle {
         font_size: 40.0,
         color: TEXT_COLOR,
@@ -153,6 +173,7 @@ fn main_menu_setup(mut cmds: Commands) {
                     }),
                 );
 
+                // play button
                 parent
                     .spawn((
                         ButtonBundle {
@@ -167,6 +188,94 @@ fn main_menu_setup(mut cmds: Commands) {
                             "New Game",
                             button_text_style.clone(),
                         ));
+                    });
+
+                // settings button
+                parent
+                    .spawn((
+                        ButtonBundle {
+                            style: button_style.clone(),
+                            background_color: Color::GRAY.into(),
+                            ..default()
+                        },
+                        MenuButtonAction::Settings,
+                    ))
+                    .with_children(|parent| {
+                        parent.spawn(TextBundle::from_section(
+                            "Settings",
+                            button_text_style.clone(),
+                        ));
+                    });
+
+                // exit button
+                parent
+                    .spawn((
+                        ButtonBundle {
+                            style: button_style.clone(),
+                            background_color: Color::GRAY.into(),
+                            ..default()
+                        },
+                        MenuButtonAction::Quit,
+                    ))
+                    .with_children(|parent| {
+                        parent.spawn(TextBundle::from_section("Exit", button_text_style.clone()));
+                    });
+            });
+    });
+}
+
+fn settings_menu_setup(mut cmds: Commands) {
+    info!("settings_menu_setup: begin");
+    let button_style = Style {
+        width: Val::Px(250.0),
+        height: Val::Px(65.0),
+        margin: UiRect::all(Val::Px(20.0)),
+        justify_content: JustifyContent::Center,
+        align_items: AlignItems::Center,
+        ..default()
+    };
+    let button_text_style = TextStyle {
+        font_size: 40.0,
+        color: TEXT_COLOR,
+        ..default()
+    };
+
+    cmds.spawn((
+        NodeBundle {
+            style: Style {
+                width: Val::Percent(100.0),
+                height: Val::Percent(100.0),
+                align_items: AlignItems::Center,
+                justify_content: JustifyContent::Center,
+                ..default()
+            },
+            background_color: Color::WHITE.into(),
+            ..default()
+        },
+        OnMenuSettingsScreen,
+    ))
+    .with_children(|parent| {
+        parent
+            .spawn(NodeBundle {
+                style: Style {
+                    flex_direction: FlexDirection::Column,
+                    align_items: AlignItems::Center,
+                    ..default()
+                },
+                ..default()
+            })
+            .with_children(|parent| {
+                parent
+                    .spawn((
+                        ButtonBundle {
+                            style: button_style.clone(),
+                            background_color: NORMAL_BUTTON.into(),
+                            ..default()
+                        },
+                        MenuButtonAction::BackToMainMenu,
+                    ))
+                    .with_children(|parent| {
+                        parent.spawn(TextBundle::from_section("Back", button_text_style.clone()));
                     });
             });
     });

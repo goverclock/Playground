@@ -29,7 +29,7 @@ fn setup(mut game_state: ResMut<NextState<GameState>>, mut cmds: Commands) {
     game_state.set(GameState::Menu);
     cmds.spawn(Camera2dBundle {
         camera: Camera {
-            clear_color: ClearColorConfig::Custom(Color::rgb(0.0, 0.0, 0.0)),
+            // clear_color: ClearColorConfig::Custom(Color::rgb(0.0, 0.0, 0.0)),
             ..Default::default()
         },
         ..Default::default()
