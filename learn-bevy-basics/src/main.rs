@@ -26,7 +26,7 @@ fn main() {
 
 fn setup(mut game_state: ResMut<NextState<GameState>>, mut cmds: Commands) {
     info!("setup: begin");
-    game_state.set(GameState::Menu); // TODO: remove
+    game_state.set(GameState::Menu);
     cmds.spawn(Camera2dBundle {
         camera: Camera {
             clear_color: ClearColorConfig::Custom(Color::rgb(0.0, 0.0, 0.0)),
@@ -34,6 +34,4 @@ fn setup(mut game_state: ResMut<NextState<GameState>>, mut cmds: Commands) {
         },
         ..Default::default()
     }); // there's no Camera2d in DefaultPlugins
-
-    info!("setup: done");
 }
