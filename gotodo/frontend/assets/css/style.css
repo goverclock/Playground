@@ -1,0 +1,32 @@
+body, html {
+    background-color: #F3E5F5;
+    margin: 0;
+    padding: 0;
+}
+
+/* sidebar */
+div.sidebar {
+    width: 20%;
+    float: left;
+    text-align: center;
+}
+
+.sidebar-item {
+    color: black;
+    background-color: #E1BEE7;
+    font-size: x-large;
+    line-height: 2;
+}
+
+.sidebar-item-selected {
+    color: black;
+    font-size: x-large;
+    line-height: 2;
+    background-color: #9C27B0;
+}
+
+/* page content */
+div.main-content {
+    /* margin-left: 20%; */
+    float: left;
+}
