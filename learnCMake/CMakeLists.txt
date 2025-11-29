@@ -18,3 +18,11 @@ function(SIMPLE XXX)
 endfunction()
 
 simple("YOU" "HE" "ME")
+
+set(MYVAR "my var")
+include(CMakePrintHelpers)
+
+cmake_print_variables(PROJECT_NAME)
+cmake_print_variables(CMAKE_PROJECT_NAME)
+cmake_print_variables(CMAKE_RUNTIME_OUTPUT_DIRECTORY)
+message(STATUS "message status")
